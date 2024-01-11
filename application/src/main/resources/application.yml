@@ -12,6 +12,11 @@ spring:
         show_sql: true
         format_sql: true
 
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/test
+    username: postgres
+    password: root
+
 security:
   allow-credentials: true
   allowed-public-apis:

@@ -7,6 +7,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Value
 @Builder
 @Table("seg_usuario")
@@ -21,6 +24,10 @@ public class UsuarioData {
     String cidade;
     @Column("cd_uf")
     String uf;
+    @Column("data_nascimento")
+    LocalDate dataNascimento;
+    @Column("cep")
+    String cep;
 
     public static UsuarioData toUsuarioData(final Usuario usuario) {
 
@@ -29,6 +36,8 @@ public class UsuarioData {
             .nome(usuario.getNome())
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
+            .dataNascimento(usuario.getDataNascimento())
+            .cep(usuario.getCep())
             .build();
     }
 
@@ -39,6 +48,8 @@ public class UsuarioData {
             .nome(usuario.getNome())
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
+            .dataNascimento(usuario.getDataNascimento())
+            .cep(usuario.getCep())
             .build();
     }
 }
